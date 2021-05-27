@@ -21,4 +21,7 @@ class Item {
 
 class TextList {
   static final textList = ['Official', 'Favorite', 'Group', 'Friends'];
+  static final nameList = ['Mike', 'Jean', 'Mona', 'Cambo', 'Rose', 'Diona'];
+  static final subList = ['Hello', 'Hi', 'Hello', 'Hi', 'Hello', 'Hi'];
+  static final trailTime = ['12/1', '12/2', '12/3', '12/1', '12/2', '12/3'];
 }
