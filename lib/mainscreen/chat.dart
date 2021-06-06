@@ -11,6 +11,12 @@ class Chat extends StatefulWidget {
 }
 
 class _ChatState extends State<Chat> {
+  void onTab(value) {
+    setState(() {
+      index = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,20 +33,41 @@ class _ChatState extends State<Chat> {
         ),
         body: Column(
           children: [
-            ChatListTile(index: 0),
-            ChatListTile(index: 1),
-            ChatListTile(index: 2),
-            ChatListTile(index: 3),
-            ChatListTile(index: 4),
-            ChatListTile(index: 5),
+            ChatListTile(
+              index: 0,
+              onTap: null,
+            ),
+            ChatListTile(
+              index: 1,
+              onTap: null,
+            ),
+            ChatListTile(
+              index: 2,
+              onTap: null,
+            ),
+            ChatListTile(
+              index: 3,
+              onTap: null,
+            ),
+            ChatListTile(
+              index: 4,
+              onTap: null,
+            ),
+            ChatListTile(
+              index: 5,
+              onTap: null,
+            ),
           ],
         ));
   }
 }
 
 class ChatListTile extends StatelessWidget {
-  const ChatListTile({Key key, int index}) : super(key: key);
-  // final int index = 0;
+  const ChatListTile({Key key, @required this.index, @required this.onTap})
+      : super(key: key);
+  final int index;
+
+  final Function onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,6 +81,7 @@ class ChatListTile extends StatelessWidget {
           style: TextStyle(fontSize: 12),
         ),
         trailing: Text(TextList.trailTime[index]),
+        onTap: onTap,
       ),
     );
   }
